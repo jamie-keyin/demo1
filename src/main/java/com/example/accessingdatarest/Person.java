@@ -1,9 +1,7 @@
 package com.example.accessingdatarest;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Person {
@@ -14,6 +12,25 @@ public class Person {
 
     private String firstName;
     private String lastName;
+
+    @OneToOne
+    private Car car;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
 
     public String getFirstName() {
         return firstName;
